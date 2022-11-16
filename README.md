@@ -43,11 +43,14 @@
 |sqft_lot15 | The square footage of the land lots of the nearest 15 neighbors|
 
 --------------------------------------------------- 
+
 ## 3. Premissas de negocio 
 
-  - Como premissa, considerou-se a localizacao dos imoveis como uma variavel fortemente correlacionada ao preço dos imoveis
-
+  - *Premissa1.* A localizacao dos imoveis é uma variavel fortemente correlacionada ao preço dos imoveis
+  - *Premissa2.* O periodo do ano em que o imovel é adquirido exerce influencia sobre a variabilidade do seu preço. A granularidade escolhida foi o 'trimestre' para os periodos que contemplam um ano. 
+  
 --------------------------------------------------- 
+
 ## 4. Planejamento da solucao 
 
 ### 4.1. Produto final
@@ -84,12 +87,46 @@
 
   Assim, foram selecionados os imoveis que tinha boas condicoes de conservacao e que tivessem seus preços abaixo da mediana da regiao
 
+
 **Questao 2: 2. Uma vez comprado o imóvel, qual é o melhor momento para vender e a que preço?**
 
----------------------------------------------------   
-## 5. Analise das hipoteses de negocio 
+  Para responder essa questao foi investigado:
+    - qual o periodo do ano (trimestre) em que os preços foram superiores na media. 
+    - qual margem de lucro recomendado para cada imovel. 
+    
+   O periodo do ano com maior preço na media foi calculado a partir dos preços/area medio ('price_per_sqft') dos imoveis agrupados por trimestres ('quarter'). Como o preço praticado nesse periodo foi maior em relacao aos outros, entende-se que ha uma maior chance de efetuar uma nova venda com margens de lucro desejadas e, portanto, recomenda-se a venda nesse periodo
+   
+   Considerando, alem do periodo em que o imovel foi adquirido, a sua regiao como premissas de negocio que influenciam o preço, foi calculado a mediana dos preços dos imoveis agrupados primeiro por trimestre e depois por 'zipcode', resultando em 'price_quarter_zipcode'. Esse calculo teve como parametro a variavel 'quarter' (trimestre) derivada anteriormente. 
+   
+   Com base na mediana desses preços agrupados por trimestre, depois por zipcode, decidiu-se sobre o preço de venda recomendado, a partir da regra:
+   
+   - 'price_per_sqft' > 'price_quarter_zipcode': margem de lucro recomendada 10%
+   - 'price_per_sqft' < 'price_quarter_zipcode': margem de lucro recomendada 30%
 
-## 6. Resultados financeiros do projeto para o negocio 
+  Assim, imoveis que foram adquiridos a um preço menor que a mediana dos preços praticados naquele mesmo trimestre (de qualquer ano), de uma mesma regiao, teriam uma margem de lucro recomendada superior aos que foram adquiridos acima dessa mediana. 
+   
+   
+---------------------------------------------------   
+## 5. Insights de negocio
+
+### 5.1. Imoveis com vista para agua sao 212% mais caros na media que os que nao possuem essa caracteristica. 
+![image](https://user-images.githubusercontent.com/110186368/202251304-bf288f0c-048f-4b6b-b1b3-47de8c3570de.png)
+Uso: imoveis com vista para agua, e com preço muito desvalorizado por conta de outros atributos, podem resultar em uma boa margem de lucro se reformados e revendidos posteriormentes
+
+### 5.2. Imoveis com data de construcao após 1955 são aproximadamente 1% mais caros na media em relação aos construidos em periodo anterior
+![image](https://user-images.githubusercontent.com/110186368/202255520-5cd32f79-a49b-4e15-b787-5cf0c4b13f48.png)
+Uso: essa segmentação nao trouxe impacto significativo para decisoes de negocio
+
+### 5.3. Imoveis com porão 
+
+
+
+
+## 6. Resultados financeiros do projeto para o negocio
+
+
+
+
 
 ## 7. Conclusoes
 

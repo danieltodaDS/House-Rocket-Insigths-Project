@@ -78,12 +78,12 @@
 
   Para responder essa questao, foram investigados os imoveis que possuiam estado de conservação acima da media e com preço subvalorizado. 
   
-  Assim, primeiramente foi derivada a variavel 'price_per_sqft' representando uma metrica de comparação dos preços dos imoveis (preço/area). Em seguida, partindo da premissa que as regioes (zipcode) dos imoveis influenciam sobremaneira o seu preço, foi calculado o 'price_sqft_per_zipcode' que representa a mediana dos 'price_per_sqft' de cada um dos zipcode do dataset. A escolha da mediana, como medida de tendencia central, visou tirar a influencia dos outliers dessa analise. 
+  Assim, primeiramente foi derivada a variavel 'price_per_sqft' representando uma metrica de comparação dos preços dos imoveis (preço/area). Em seguida, partindo da premissa que as regioes (zipcode) dos imoveis influenciam sobremaneira o seu preço, foi calculado o 'median_price_zipcode' que representa a mediana dos 'price_per_sqft' de cada um dos zipcode do dataset. A escolha da mediana, como medida de tendencia central, visou tirar a influencia dos outliers dessa analise. 
   
-  Com esses valores de 'price_sqft_per_zipcode' foram definifos os imoveis recomendados para compra, seguindo as seguintes regras:
+  Com esses valores de 'median_price_zipcode' foram definidos os imoveis recomendados para compra, seguindo as seguintes regras:
     
    - imoveis com 'condition' >= 3
-   - imoveis com 'price_per_zipcode' < 'price_sqft_per_zipcode'
+   - imoveis com 'price_per_sqft' < 'median_price_zipcode'
 
   Assim, foram selecionados os imoveis que tinha boas condicoes de conservacao e que tivessem seus preços abaixo da mediana da regiao
 
@@ -107,20 +107,39 @@
    
    
 ---------------------------------------------------   
+
 ## 5. Insights de negocio
 
 ### 5.1. Imoveis com vista para agua sao 212% mais caros na media que os que nao possuem essa caracteristica. 
 ![image](https://user-images.githubusercontent.com/110186368/202251304-bf288f0c-048f-4b6b-b1b3-47de8c3570de.png)
+
 Uso: imoveis com vista para agua, e com preço muito desvalorizado por conta de outros atributos, podem resultar em uma boa margem de lucro se reformados e revendidos posteriormentes
+
 
 ### 5.2. Imoveis com data de construcao após 1955 são aproximadamente 1% mais caros na media em relação aos construidos em periodo anterior
 ![image](https://user-images.githubusercontent.com/110186368/202255520-5cd32f79-a49b-4e15-b787-5cf0c4b13f48.png)
+
 Uso: essa segmentação nao trouxe impacto significativo para decisoes de negocio
 
-### 5.3. Imoveis com porão 
+
+### 5.3. Imoveis sem porao sao 39% mais caros que imoveis com porao, na media
+![image](https://user-images.githubusercontent.com/110186368/202283522-00fcbf86-bb01-4a98-a842-e9f09a998926.png)
+
+Uso: Ter porao nao incrementa valor ao imovel e nao deve influenciar a decisao de compra de novos imoveis e nem reforma para se construir poroes nas casas que nao possuem esse atributo
+
+### 5.4. O preço medio dos imoveis de 2015 foram 0,5% superiores aos imoveis do ano anterior
+![image](https://user-images.githubusercontent.com/110186368/202285638-944c7a12-064b-439b-9467-f9211cf2ed28.png)
+
+Uso: esse valor pode ser usado como referencia minima para margem de lucro na venda de imoveis, dado que os dados evidenciam que pode haver uma valorizacao YoY 
+
+### 5.5. A base de imoveis com 3 banheiros teve um crescimento medio Mom de 21,89% 
+
+![image](https://user-images.githubusercontent.com/110186368/202294769-666aa06b-85a4-4656-be4a-d8a7218e91b6.png)
+
+Uso: Dada a tendencia positiva de quantidade de imoveis comprados/vendidos com 3 banheiros, mes contra mes, adquirir um imovel com essa caracteristica pode representar um menor risco de vacancia e de liquidez. 
 
 
-
+-----------------------------
 
 ## 6. Resultados financeiros do projeto para o negocio
 

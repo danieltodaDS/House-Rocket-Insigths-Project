@@ -91,8 +91,9 @@
 **Questao 2: 2. Uma vez comprado o imóvel, qual é o melhor momento para vender e a que preço?**
 
   Para responder essa questao foi investigado:
-    - qual o periodo do ano (trimestre) em que os preços foram superiores na media. 
-    - qual margem de lucro recomendado para cada imovel. 
+  
+   - qual o periodo do ano (trimestre) em que os preços foram superiores na media. 
+   - qual margem de lucro recomendado para cada imovel. 
     
    O periodo do ano com maior preço na media foi calculado a partir dos preços/area medio ('price_per_sqft') dos imoveis agrupados por trimestres ('quarter'). Como o preço praticado nesse periodo foi maior em relacao aos outros, entende-se que ha uma maior chance de efetuar uma nova venda com margens de lucro desejadas e, portanto, recomenda-se a venda nesse periodo
    

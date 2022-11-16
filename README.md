@@ -9,12 +9,14 @@
     1. Quais casas o CEO da House Rocket deveria comprar e por qual preço de compra?
     2. Uma vez comprado o imóvel, qual é o melhor momento para vender e a que preço?
     
-  
+--------------------------------------------------- 
 ## 2. Data Overview
 
   O dataset analisado contem os preços dos imoveis de King County, USA, que inclui a cidade de Seattle. Os imoveis desse dataset tiveram a data de venda entre Maio/2014 e Maio/2015  
   
-  **Descricao das colunas**
+  **Descricao das colunas do dataset original** 
+  
+    fonte: https://www.kaggle.com/datasets/harlfoxem/housesalesprediction/discussion/207885
 
 | Coluna | Descrição |
 | :----- | :-------- |
@@ -39,15 +41,57 @@
 |long | Longitude|
 |sqft_living15 | The square footage of interior housing living space for the nearest 15 neighbors|
 |sqft_lot15 | The square footage of the land lots of the nearest 15 neighbors|
-3. Premissas de negocio 
 
-4. Planejamento da solucao 
+--------------------------------------------------- 
+## 3. Premissas de negocio 
 
-5. Analise das hipoteses de negocio 
+  - Como premissa, considerou-se a localizacao dos imoveis como uma variavel fortemente correlacionada ao preço dos imoveis
 
-6. Resultados financeiros do projeto para o negocio 
+--------------------------------------------------- 
+## 4. Planejamento da solucao 
 
-7. Conclusoes
+### 4.1. Produto final
+  - Solucao para Questao 1:
+    - Tabela com recomendacao de compra: contem os imoveis filtrados entre as opcoes do Filtro de recomendação 
+    - Mapa interativo: contem os imoveis e seus atributos filtrados entre as opcoes do Filtro de recomendação
+    - Filtro de recomendação, contem as opções "Recomendado", "Nao recomendado" e "Todos". 
 
-8. Proximos passos
+  - Solucao para Questao 2: 
+    - Tabela com recomendacao de venda: contem trimestre de aquisicao, preço de venda e lucro recomendado
+    - Mapa interativo: contem localizacao dos imoveis, seus atributos e preço recomendado de venda
+  
+  - FINANCIAL RESULTS
+    
+### 4.2. Ferramentas
+  - Python 3.8.13, Pandas, Matplotlib, Plotly, Plotly Express, folium e Seaborn
+  - Jupyter notebook
+  - Streamlit 
+  - Heroku 
+  - Git e Github
+
+### 4.3. Processo de solucao
+
+**Questao 1: Quais casas o CEO da House Rocket deveria comprar e por qual preço de compra?**
+
+  Para responder essa questao, foram investigados os imoveis que possuiam estado de conservação acima da media e com preço subvalorizado. 
+  
+  Assim, primeiramente foi derivada a variavel 'price_per_sqft' representando uma metrica de comparação dos preços dos imoveis (preço/area). Em seguida, partindo da premissa que as regioes (zipcode) dos imoveis influenciam sobremaneira o seu preço, foi calculado o 'price_sqft_per_zipcode' que representa a mediana dos 'price_per_sqft' de cada um dos zipcode do dataset. A escolha da mediana, como medida de tendencia central, visou tirar a influencia dos outliers dessa analise. 
+  
+  Com esses valores de 'price_sqft_per_zipcode' foram definifos os imoveis recomendados para compra, seguindo as seguintes regras:
+    
+   - imoveis com 'condition' >= 3
+   - imoveis com 'price_per_zipcode' < 'price_sqft_per_zipcode'
+
+  Assim, foram selecionados os imoveis que tinha boas condicoes de conservacao e que tivessem seus preços abaixo da mediana da regiao
+
+**Questao 2: 2. Uma vez comprado o imóvel, qual é o melhor momento para vender e a que preço?**
+
+---------------------------------------------------   
+## 5. Analise das hipoteses de negocio 
+
+## 6. Resultados financeiros do projeto para o negocio 
+
+## 7. Conclusoes
+
+## 8. Proximos passos
 

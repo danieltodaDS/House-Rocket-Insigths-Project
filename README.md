@@ -137,7 +137,7 @@ Uso: Dada a tendencia positiva de quantidade de imoveis comprados/vendidos com 3
 
 Para o calculo dos impactos financeiros desse projeto considerou-se a seleção dos imoveis recomendados para compra e seus preços de venda sugeridos, dado uma margem de lucro estabelecida a partir da mediana dos preços/area dos imoveis adquiridos no mesmo trimestre e no mesmo zipcode. 
 
-**Dessa forma, chegou-se a um lucro total projetado de R$ 1.506.438.582 na venda dos 10620 imoveis (que foram recomendados para compra), sendo uma media de lucro de R$ 141849 por imovel vendido
+**Dessa forma, chegou-se a um lucro total projetado de R$ 1.506.438.582 na venda dos 10620 imoveis (que foram recomendados para compra), sendo uma media de lucro de R$ 141849 por imovel vendido**
 
 -------------------------------
 

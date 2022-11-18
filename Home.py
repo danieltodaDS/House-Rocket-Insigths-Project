@@ -129,13 +129,13 @@ if __name__ == '__main__':
     
     st.sidebar.title("Projeto")
     st.sidebar.info(
-            "Esse é um projeto desenvolvido nas aulas do curso 'Python do ZERO ao DS'. "         
+            "O problema de negocio desse projeto foi proposto no curso 'Python do ZERO ao DS', de Meigarom Lopes. "         
         )
     st.sidebar.title("Sobre")
     st.sidebar.info(
             """
-            Esse projeto é uma analise exploratoria dos dados dos imoveis de King Souty, USA
-            com o proposito de responder às perguntas do CEO e obter insights. 
+            Nesse trabalho foi realizado uma analise dos dados de venda dos imoveis de King Souty, USA
+            a fim de responder às questoes de negocio do CEO e obter insights. 
            """
         )
         

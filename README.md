@@ -14,7 +14,7 @@
    
    O dataset utilizado nesse projeto de estudo foi obtido do desafio do kaggle [House Sales in King County, USA](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction)
     
-   As informaçoes desse projeto podem ser acessadas tambem pelo [House Rocket APP] (https://houserocket-project.streamlit.app/), contendo as tabelas e mapas com recomendaçoes de compra e venda, e as hipoteses de negocio formuladas
+   As informaçoes desse projeto podem ser acessadas tambem pelo [House Rocket APP](https://houserocket-project.streamlit.app/), contendo as tabelas e mapas com recomendaçoes de compra e venda, e as hipoteses de negocio formuladas
 
 --------------------------------------------------- 
 ## 2. Data Overview

@@ -149,6 +149,12 @@ Com o projeto foi possivel responder as duas questoes de negocio propostas, assi
 
 ----------------------------------
 
+## 8. Proximos passos
+
+- Analise exploratoria abordando outras variaveis dos imoveis
+- Previsao de preço de venda dos imoveis por modelos de regressao
+
+
 # Contato 
 hiroshi1991@gmail.com
 
